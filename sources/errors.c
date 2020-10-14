@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 13:20:04 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/13 19:43:35 by mazor            ###   ########.fr       */
+/*   Created: 2020/10/13 13:37:39 by mazor             #+#    #+#             */
+/*   Updated: 2020/10/13 20:32:41 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "libft.h"
+#include <stdlib.h>
 
-void	check_file_extension(const char *filename);
-void	print_error(int err_num);
+#define STD_ERR 2
 
-#endif
+void	print_error(int err_num)
+{
+	ft_putendl_fd("Error", STD_ERR);
+	if (err_num == 1)
+		ft_putendl_fd("usage: ./miniRT <scene_name> [--save]", STD_ERR);
+	if (err_num == 2)
+		ft_putendl_fd("File extension must be \".rt\"", STD_ERR);
+	exit(err_num);
+}

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 13:20:04 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/13 19:43:35 by mazor            ###   ########.fr       */
+/*   Created: 2020/10/13 19:37:11 by mazor             #+#    #+#             */
+/*   Updated: 2020/10/13 19:44:48 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "libft.h"
+#include "minirt.h"
 
-void	check_file_extension(const char *filename);
-void	print_error(int err_num);
-
-#endif
+void	check_file_extension(const char *filename)
+{
+	while (*filename)
+		filename++;
+	filename -= 3;
+	if (ft_strcmp(filename, ".rt"))
+		print_error(2);
+}
