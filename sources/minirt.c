@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:19:25 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/20 13:21:18 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/20 16:27:45 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ static void	init_scene(t_scene *scene, int fd)
 	scene->scene_error = FALSE;
 	scene->is_resol_set = FALSE;
 	scene->is_light_set = FALSE;
+	scene->cams = NULL;
+	scene->objs = NULL;
+	scene->lights = NULL;
 }
 
 int			main(int ar, char **av)

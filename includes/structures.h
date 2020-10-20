@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/20 14:20:53 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/21 00:10:39 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,23 @@
 # include "libft.h"
 # define TRUE 1
 # define FALSE 0
+# define EPSILON 0.000001
+
+typedef	struct		s_vec
+{
+	double			x;
+	double			y;
+	double			z;
+	double			len;
+	double			len2;
+}					t_vec;
+
+typedef struct		s_cam
+{
+	t_vec			pos;
+	t_vec			norm;
+	int				fov;
+}					t_cam;
 
 typedef struct		s_color
 {
@@ -25,13 +42,6 @@ typedef struct		s_color
 	int				g;
 	int				b;
 }					t_color;
-
-typedef	struct		s_vec
-{
-	double			x;
-	double			y;
-	double			z;
-}					t_vec;
 
 typedef struct		s_light
 {
@@ -55,7 +65,7 @@ typedef struct		s_mlx
 typedef struct		s_scene
 {
 	t_mlx			mlx;
-	t_list			**cams;
+	t_list			*cams;
 	t_list			*objs;
 	t_list			*lights;
 	int				scene_error;

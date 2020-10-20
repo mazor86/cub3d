@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 12:06:23 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/20 14:26:21 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/21 00:26:52 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,31 @@ void	validate_ambient_light(char **elem_info, int line_num, t_scene *scene)
 
 void	validate_camera(char **elem_info, int line_num, t_scene *scene)
 {
+	int			i;
+	t_cam		camera;
+	t_vec		array[2];
 
+	i = 0;
+	while (elem_info[i])
+		i++;
+	if (i != 4)
+		print_validation_error(4, line_num, scene);
+	if (!scene->scene_error)
+	{
+		if (!is_point(elem_info[1], &(array[0])))
+			print_validation_error(5, line_num, scene);
+		else if (!is_normal_vector(elem_info[2], &(array[1])))
+			print_validation_error(5, line_num, scene);
+		else if (!is_all_digit(elem_info[3]) || ft_atoi(elem_info[3]) > 180)
+			print_validation_error(5, line_num, scene);
+		else
+		{
+			camera.pos = array[0];
+			camera.norm = array[1];
+			camera.fov = ft_atoi(elem_info[3]);
+			ft_lstadd_front(&(scene->cams), ft_lstnew(&camera));
+		}
+	}
 }
 
 void	validate_spot_light(char **elem_info, int line_num, t_scene *scene)
