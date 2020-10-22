@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:37:39 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/19 15:36:00 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/21 17:12:13 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	print_validation_error(int err_num, int line_num, t_scene *scene)
 {
 	if (!scene->scene_error)
 		ft_putendl_fd("Error", STD_ERR);
+	scene->line_error = TRUE;
 	scene->scene_error = TRUE;
 	ft_putstr_fd("Line ", STD_ERR);
 	ft_putnbr_fd(line_num, STD_ERR);
@@ -48,9 +49,9 @@ void	print_validation_error(int err_num, int line_num, t_scene *scene)
 
 void	print_scene_error(int err_num, t_scene *scene)
 {
-	if (!scene->scene_error)
+	if (!scene->line_error)
 		ft_putendl_fd("Error", STD_ERR);
-	scene->scene_error = TRUE;
+	scene->line_error = TRUE;
 	if (err_num == 10)
 		ft_putendl_fd(ERR_10, STD_ERR);
 	if (err_num == 11)

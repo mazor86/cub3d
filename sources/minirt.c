@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:19:25 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/20 16:27:45 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/21 23:15:49 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include "structures.h"
 #include "parse.h"
 #include "mlx.h"
+#include <stdio.h> //
+
 
 static void	init_scene(t_scene *scene, int fd)
 {
@@ -32,6 +34,7 @@ static void	init_scene(t_scene *scene, int fd)
 	}
 	mlx_get_screen_size(mlx.mlx_ptr, &(mlx.screen_x), &(mlx.screen_y));
 	scene->mlx = mlx;
+	scene->line_error = FALSE;
 	scene->scene_error = FALSE;
 	scene->is_resol_set = FALSE;
 	scene->is_light_set = FALSE;
@@ -57,6 +60,6 @@ int			main(int ar, char **av)
 	else
 		print_and_exit_error(7);
 	check_scene(&scene);
-	
+	ft_print_scene(&scene);//	
 	return (0); //rm
 }

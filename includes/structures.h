@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 00:10:39 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/21 21:48:32 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define TRUE 1
 # define FALSE 0
 # define EPSILON 0.000001
+# define SPOT 1
 
 typedef	struct		s_vec
 {
@@ -45,10 +46,10 @@ typedef struct		s_color
 
 typedef struct		s_light
 {
-	char			*type;
+	int				*type;
 	t_vec			pos;
 	double			intens;
-	int				color;
+	t_color			color;
 }					t_light;
 
 typedef struct		s_mlx
@@ -68,6 +69,7 @@ typedef struct		s_scene
 	t_list			*cams;
 	t_list			*objs;
 	t_list			*lights;
+	int				line_error;
 	int				scene_error;
 	int				is_resol_set;
 	int				is_light_set;

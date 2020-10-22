@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 19:37:11 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/20 17:37:59 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/21 17:11:11 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_file_extension(const char *filename)
 
 void	validate_elem(char **elem_info, int line_num, t_scene *scene)
 {
-	scene->scene_error = FALSE;
+	scene->line_error = FALSE;
 	if (!(ft_strcmp(elem_info[0], "R")))
 		validate_resolution(elem_info, line_num, scene);
 	else if (!(ft_strcmp(elem_info[0], "A")))
