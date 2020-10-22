@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 23:16:27 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/22 23:02:15 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int		is_normal_vector(char *str, t_vec *vector)
 		return (0);
 	if (fabs(vector->x) > 1 || fabs(vector->y) > 1 || fabs(vector->z) > 1)
 		return (0);
+	
 	normalize_vector(vector);	
 	return (1);
 }

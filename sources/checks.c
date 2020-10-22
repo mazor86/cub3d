@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 19:37:11 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 17:11:11 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/22 16:29:13 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	check_scene(t_scene *scene)
 	}
 }
 
-void	check_file_extension(const char *filename)
+void	check_file_extension(const char *filename, t_scene *scene)
 {
 	while (*filename)
 		filename++;
 	filename -= 3;
 	if (ft_strcmp(filename, ".rt"))
-		print_and_exit_error(2);
+		print_and_exit_error(2, scene);
 }
 
 void	validate_elem(char **elem_info, int line_num, t_scene *scene)

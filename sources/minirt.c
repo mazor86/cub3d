@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:19:25 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 23:15:49 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/22 16:31:10 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	init_scene(t_scene *scene, int fd)
 	if (!(mlx.mlx_ptr = mlx_init()))
 	{
 		close(fd);
-		print_and_exit_error(8);
+		print_and_exit_error(8, scene);
 	}
 	mlx_get_screen_size(mlx.mlx_ptr, &(mlx.screen_x), &(mlx.screen_y));
 	scene->mlx = mlx;
@@ -46,20 +46,22 @@ static void	init_scene(t_scene *scene, int fd)
 int			main(int ar, char **av)
 {
 	int			fd;
-	t_scene		scene;
+	t_scene		*scene;
 
+	if (!(scene = (t_scene*)malloc(sizeof(t_scene))))
+		print_and_exit_error(13, scene);
 	if (ar < 2 || ar > 3 || (ar == 3 && ft_strcmp(av[2], "--save")))
-		print_and_exit_error(1);
-	check_file_extension(av[1]);
+		print_and_exit_error(1, scene);
+	check_file_extension(av[1], scene);
 	if ((fd = open(av[1], O_RDONLY)) != -1)
 	{
-		init_scene(&scene, fd);
-		parse_scene(fd, &scene);
+		init_scene(scene, fd);
+		parse_scene(fd, scene);
 		close(fd);
 	}
 	else
-		print_and_exit_error(7);
-	check_scene(&scene);
-	ft_print_scene(&scene);//	
+		print_and_exit_error(7, scene);
+	check_scene(scene);
+	ft_print_scene(scene);//	
 	return (0); //rm
 }

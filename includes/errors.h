@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 12:00:37 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/19 19:19:23 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/22 16:07:56 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@
 # define ERR_11 "Ambient light is not set"
 # define ERR_12 "No cameras"
 # define ERR_13 "Bad color"
+# define ERR_14 "Some trouble with memory allocation"
 
-void	print_and_exit_error(int err_num);
+void	print_and_exit_error(int err_num, t_scene *scene);
 void	print_validation_error(int err_num, int l_num, t_scene *scene);
 void	print_scene_error(int err_num, t_scene *scene);
 
