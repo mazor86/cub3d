@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 14:18:31 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/17 14:17:28 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 21:53:02 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ static ssize_t	read_buf(int fd, char **buf_ptr, size_t size, char **rem_ptr)
 	read_b = read(fd, *buf_ptr, size);
 	if (read_b < 0)
 		return (-1);
-	if (!(*rem_ptr = strjoinfree(*rem_ptr, *buf_ptr, read_b)))
+	*rem_ptr = strjoinfree(*rem_ptr, *buf_ptr, read_b);
+	if (!(*rem_ptr))
 		return (-1);
 	return (read_b);
 }
@@ -81,7 +82,8 @@ int				get_next_line(int fd, char **line)
 		if (remainder)
 			if ((flag = nl_search(&remainder, line)))
 				return (flag);
-		if (!(buf = (char*)malloc(sizeof(char) * BUFFER_SIZE)))
+		buf = (char*)malloc(sizeof(char) * BUFFER_SIZE);
+		if (!buf)
 			return (free_mem(&remainder, &buf));
 		if (!(read_b = read_buf(fd, &buf, BUFFER_SIZE, &remainder)))
 		{

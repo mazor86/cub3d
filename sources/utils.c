@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/22 23:02:15 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 23:17:21 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void	free_scene(t_scene *scene)
 {
-	//TODO
+	ft_lstclear(&(scene->cams), free);
+	ft_lstclear(&(scene->lights), free);
+	ft_lstclear(&(scene->objs), free);
+	free(scene);
+	scene = NULL;
 }
 
 int		free_ptr_to_ptr(char **ptr_to_ptr)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (ptr_to_ptr[i])
@@ -75,7 +79,7 @@ int		is_rgb_color(char *str_color, t_color *color)
 ** {
 ** 	t_vec	vector;
 ** 	char	**position;
-** 
+**
 ** 	position = ft_split(str, ',');
 ** 	vector.x = ft_atof(position[0]);
 ** 	vector.y = ft_atof(position[1]);
@@ -116,7 +120,7 @@ int		is_normal_vector(char *str, t_vec *vector)
 	if (fabs(vector->x) > 1 || fabs(vector->y) > 1 || fabs(vector->z) > 1)
 		return (0);
 	
-	normalize_vector(vector);	
+	normalize_vector(vector);
 	return (1);
 }
 
@@ -132,8 +136,10 @@ double	ft_atof(const char *str)
 	integer = (double)ft_atoi(str) * sign;
 	while (*str != '.' && *str)
 		str++;
+	if (!(*str))
+		return (sign * integer);
 	fraction = (double)ft_atoi(++str);
-	while (ft_isdigit(*str++))
+	while (ft_isdigit(*(str++)))
 		fraction /= 10;
 	return (sign * (integer + fraction));
 }
@@ -159,10 +165,20 @@ void	ft_print_scene(t_scene *scene)//
 	printf("SCENE\n\n");
 	printf("Resolution = %d x %d\n\n", scene->mlx.size_x, scene->mlx.size_y);
 	printf("Ambient light:\nintens = %.2f\ncolor: %3d %3d %3d\n\n", scene->amb_intens, scene->amb_color.r, scene->amb_color.g, scene->amb_color.b);
-	printf("Cameras:\nposition: (%.2f, %.2f %.2f)\n", camera.pos.x, camera.pos.y, camera.pos.z);
-	printf("direction: (%.2f, %.2f %.2f)\n", camera.norm.x, camera.norm.y, camera.norm.z);
-	printf("fov: %d\n\n", camera.fov);
-	printf("Lights\n");
-	printf("position: (%.2f, %.2f %.2f)\n", light.pos.x, light.pos.y, light.pos.z);
-	printf("intens = %.2f\ncolor: %3d %3d %3d\n\n", light.intens, light.color.r, light.color.g, light.color.b);
+	if (scene->cams)
+	{
+		printf("Cameras:\nposition: (%.2f, %.2f %.2f)\n", camera.pos.x, camera.pos.y, camera.pos.z);
+		printf("direction: (%.2f, %.2f %.2f)\n", camera.norm.x, camera.norm.y, camera.norm.z);
+		printf("fov: %d\n\n", camera.fov);
+	}
+	else
+		printf("NO CAMS\n");
+	if (scene->lights)
+	{
+		printf("Lights\n");
+		printf("position: (%.2f, %.2f %.2f)\n", light.pos.x, light.pos.y, light.pos.z);
+		printf("intens = %.2f\ncolor: %3d %3d %3d\n\n", light.intens, light.color.r, light.color.g, light.color.b);
+	}
+	else
+		printf("NO SPOT LIGHTS\n");
 }

@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 22:51:47 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 00:16:50 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 23:14:44 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 double		calc_vec_len(t_vec *vec)
 {
-		vec->len2 = vec->x * vec->x + vec->y * vec->y + vec->z * vec->z;
-		vec->len = sqrt(vec->len2);
+	vec->len2 = vec->x * vec->x + vec->y * vec->y + vec->z * vec->z;
+	vec->len = sqrt(vec->len2);
 	return (vec->len);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:19:25 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/22 16:31:10 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/24 01:49:41 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 #include "structures.h"
 #include "parse.h"
 #include "mlx.h"
-#include <stdio.h> //
-
 
 static void	init_scene(t_scene *scene, int fd)
 {
@@ -53,7 +51,8 @@ int			main(int ar, char **av)
 	if (ar < 2 || ar > 3 || (ar == 3 && ft_strcmp(av[2], "--save")))
 		print_and_exit_error(1, scene);
 	check_file_extension(av[1], scene);
-	if ((fd = open(av[1], O_RDONLY)) != -1)
+	fd = open(av[1], O_RDONLY);
+	if (fd != -1)
 	{
 		init_scene(scene, fd);
 		parse_scene(fd, scene);
@@ -62,6 +61,7 @@ int			main(int ar, char **av)
 	else
 		print_and_exit_error(7, scene);
 	check_scene(scene);
-	ft_print_scene(scene);//	
+	ft_print_scene(scene);//
+	free_scene(scene);
 	return (0); //rm
 }

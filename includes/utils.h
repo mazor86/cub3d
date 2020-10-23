@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:59 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 23:17:20 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 23:19:06 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <math.h>
+# include <stdio.h>//
 # include "libft.h"
 # include "structures.h"
 # include "math_utils.h"
@@ -33,4 +34,4 @@ void	ft_print_scene(t_scene *scene);//
 ** t_vec	str_to_vec(char *str);
 */
 
-#endif 
+#endif

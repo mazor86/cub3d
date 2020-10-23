@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 03:41:22 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/17 14:16:19 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 21:39:29 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ size_t	ft_strlen_gnl(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*(s++))
+	while (*s)
+	{
 		len++;
+		s++;
+	}
 	return (len);
 }
 
@@ -27,21 +30,20 @@ size_t	ft_strlcpy_gnl(char *dst, const char *src, size_t size)
 	size_t dst_len;
 	size_t src_len;
 
-	if (src && dst)
+	if (!src || !dst)
+		return (0);
+	dst_len = (size - 1);
+	src_len = ft_strlen_gnl(src);
+	if (size)
 	{
-		dst_len = (size - 1);
-		src_len = ft_strlen_gnl(src);
-		if (size)
+		while (*src && dst_len)
 		{
-			while (*src && dst_len--)
-			{
-				*dst++ = *src++;
-			}
-			*dst = '\0';
+			*dst++ = *src++;
 		}
-		return ((src_len));
+		*dst = '\0';
+		dst_len--;
 	}
-	return (0);
+	return ((src_len));
 }
 
 char	*ft_strdup_gnl(char *s)

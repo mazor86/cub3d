@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 12:06:23 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/23 18:05:09 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/24 01:24:21 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	validate_camera(char **elem_info, int line_num, t_scene *scene)
 		{
 			camera.fov = ft_atoi(elem_info[3]);
 			if (!(new_cam = (t_cam*)malloc(sizeof(t_cam))))
-				free_scene(scene);
+				print_and_exit_error(14, scene);
 			copy_cam(new_cam, &camera);
 			ft_lstadd_front(&(scene->cams), ft_lstnew(new_cam));
 		}
@@ -111,7 +111,7 @@ void	validate_spot_light(char **elem_info, int line_num, t_scene *scene)
 		{
 			light.type = SPOT;
 			if (!(new_light = (t_light*)malloc(sizeof(t_light))))
-				free_scene(scene);
+				print_and_exit_error(14, scene);
 			copy_light(new_light, &light);
 			ft_lstadd_front(&(scene->lights), ft_lstnew(new_light));
 		}

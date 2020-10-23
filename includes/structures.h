@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/23 18:05:52 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/24 00:34:28 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # define FALSE 0
 # define EPSILON 0.000001
 # define SPOT 1
+# define SPHERE 1
+# define PLANE 2
+# define SQUARE 3
+# define CYLINDER 4
+# define TRIANGLE 5
 
 typedef	struct		s_vec
 {
@@ -62,6 +67,19 @@ typedef struct		s_mlx
 	int				size_y;
 	char			*title;
 }					t_mlx;
+
+typedef struct		s_obj
+{
+	int				type;
+	t_color			color;
+	t_vec			center;
+	t_vec			norm;
+	double			diam;
+	double			height;
+	t_vec			a;
+	t_vec			b;
+	t_vec			c;
+}					t_obj;
 
 typedef struct		s_scene
 {

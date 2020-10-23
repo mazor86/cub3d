@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 20:57:33 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 23:18:06 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 23:16:47 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	parse_element(char *line, int line_num, t_scene *scene)
 {
 	char **elem_info;
-	
+
 	elem_info = ft_split(line, ' ');
 	validate_elem(elem_info, line_num, scene);
 	free_ptr_to_ptr(elem_info);
@@ -27,15 +27,18 @@ void	parse_scene(int fd, t_scene *scene)
 	int		line_num;
 
 	line_num = 1;
+	line = NULL;
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (*line)
 			parse_element(line, line_num, scene);
-		ft_print_scene(scene);//
+	// ft_print_scene(scene);//
 		free(line);
+		line = NULL;
 		line_num++;
 	}
 	if (line_num && *line)
 		parse_element(line, line_num, scene);
 	free(line);
+	line = NULL;
 }
