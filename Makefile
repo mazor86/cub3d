@@ -24,7 +24,7 @@ SRC_DIR			= ./sources/
 
 SRC				= minirt.c			errors.c			checks.c\
 				  get_next_line.c	get_next_line_utils.c\
-				  parse.c			utils.c\
+				  parse.c			utils.c				copy.c\
 				  math_utils.c		validate_scene.c	validate_obj.c\
 
 OBJ				= $(addprefix $(SRC_DIR), $(SRC:.c=.o))

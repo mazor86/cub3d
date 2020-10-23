@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/21 21:48:32 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 18:05:52 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct		s_color
 
 typedef struct		s_light
 {
-	int				*type;
+	int				type;
 	t_vec			pos;
 	double			intens;
 	t_color			color;

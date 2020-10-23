@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 12:00:20 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/19 13:32:48 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/23 17:56:19 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "structures.h"
 # include "utils.h"
 # include "errors.h"
+# include "copy.h"
 
 void	validate_resolution(char **elem_info, int l_num, t_scene *scene);
 void	validate_ambient_light(char **elem_info, int l_num, t_scene *scene);
