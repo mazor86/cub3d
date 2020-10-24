@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:59 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/23 23:19:06 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/24 12:23:53 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <math.h>
 # include <stdio.h>//
+# include "temp.h"//
 # include "libft.h"
 # include "structures.h"
 # include "math_utils.h"
@@ -28,7 +29,6 @@ int		is_point(char *str, t_vec *array);
 int		is_normal_vector(char *str, t_vec *vector);
 double	ft_atof(const char *str);
 int		count_str_in_array(char **array_of_str);
-void	ft_print_scene(t_scene *scene);//
 
 /*
 ** t_vec	str_to_vec(char *str);

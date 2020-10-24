@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/23 23:17:21 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/24 13:20:55 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,8 @@ int		is_normal_vector(char *str, t_vec *vector)
 		return (0);
 	if (fabs(vector->x) > 1 || fabs(vector->y) > 1 || fabs(vector->z) > 1)
 		return (0);
-	
+	if (vector->len < EPSILON)
+		return (0);
 	normalize_vector(vector);
 	return (1);
 }
@@ -154,31 +155,3 @@ int		count_str_in_array(char **array_of_str)
 	return (i);
 }
 
-void	ft_print_scene(t_scene *scene)//
-{
-	t_cam	camera;
-	t_light	light;
-	if (scene->cams)
-		camera = *(t_cam *)(scene->cams->content);
-	if (scene->lights)
-		light = *(t_light *)(scene->lights->content);
-	printf("SCENE\n\n");
-	printf("Resolution = %d x %d\n\n", scene->mlx.size_x, scene->mlx.size_y);
-	printf("Ambient light:\nintens = %.2f\ncolor: %3d %3d %3d\n\n", scene->amb_intens, scene->amb_color.r, scene->amb_color.g, scene->amb_color.b);
-	if (scene->cams)
-	{
-		printf("Cameras:\nposition: (%.2f, %.2f %.2f)\n", camera.pos.x, camera.pos.y, camera.pos.z);
-		printf("direction: (%.2f, %.2f %.2f)\n", camera.norm.x, camera.norm.y, camera.norm.z);
-		printf("fov: %d\n\n", camera.fov);
-	}
-	else
-		printf("NO CAMS\n");
-	if (scene->lights)
-	{
-		printf("Lights\n");
-		printf("position: (%.2f, %.2f %.2f)\n", light.pos.x, light.pos.y, light.pos.z);
-		printf("intens = %.2f\ncolor: %3d %3d %3d\n\n", light.intens, light.color.r, light.color.g, light.color.b);
-	}
-	else
-		printf("NO SPOT LIGHTS\n");
-}
