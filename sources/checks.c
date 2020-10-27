@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 19:37:11 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/22 16:29:13 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/25 12:58:17 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	check_scene(t_scene *scene)
 		free_scene(scene);
 		exit(-1);
 	}
+	scene->num_cams = ft_lstsize(scene->cams);
 }
 
 void	check_file_extension(const char *filename, t_scene *scene)

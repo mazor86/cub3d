@@ -16,17 +16,34 @@ CC				= clang
 
 RM				= rm -rf
 
-FLAGS			= -Wall -Wextra -O0
+FLAGS			= -Wall -Wextra -Werror -O0
 
 INCLUDES		= ./includes/
 
 SRC_DIR			= ./sources/
 
-SRC				= minirt.c			errors.c			checks.c\
-				  get_next_line.c	get_next_line_utils.c\
-				  parse.c			utils.c				copy.c\
-				  math_utils.c		validate_scene.c	validate_obj.c\
-				  temp.c #rm
+OBJ_DIR			= ./objects/
+
+SRC				=	checks.c\
+					copy.c\
+					cylinder_inter.c\
+					errors.c\
+					get_next_line_utils.c\
+					get_next_line.c\
+					image.c\
+					math_utils.c\
+					minirt.c\
+					parse.c\
+					plane_inter.c\
+					sphere_inter.c\
+					square_inter.c\
+					trace_ray.c\
+					triangle_inter.c\
+					utils.c\
+					validate_obj.c\
+					validate_scene.c\
+					vector_operation.c\
+					window.c
 
 OBJ				= $(addprefix $(SRC_DIR), $(SRC:.c=.o))
 
@@ -47,7 +64,7 @@ $(MLX):
 					make -C $(MLX_DIR)
 					@echo "$@ is done!\n"
 
-%.o:		%.c
+%.o:		%.c 
 					$(CC) $(FLAGS) -I$(INCLUDES) -c $< -o $@ -g
 					@echo "Compiled $< successfully..."
 

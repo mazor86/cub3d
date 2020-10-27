@@ -6,20 +6,11 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:19:25 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/24 01:49:41 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 00:08:38 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include "libft.h"
-#include "errors.h"
-#include "checks.h"
-#include "structures.h"
-#include "parse.h"
-#include "mlx.h"
+#include "minirt.h"
 
 static void	init_scene(t_scene *scene, int fd)
 {
@@ -39,6 +30,7 @@ static void	init_scene(t_scene *scene, int fd)
 	scene->cams = NULL;
 	scene->objs = NULL;
 	scene->lights = NULL;
+	scene->images = NULL;
 }
 
 int			main(int ar, char **av)
@@ -61,7 +53,7 @@ int			main(int ar, char **av)
 	else
 		print_and_exit_error(7, scene);
 	check_scene(scene);
-	ft_print_scene(scene);//
-	free_scene(scene);
+	create_images(scene);
+	create_window(scene);
 	return (0); //rm
 }

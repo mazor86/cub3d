@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   copy.h                                             :+:      :+:    :+:   */
+/*   vector_operation.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/23 17:48:13 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 20:59:22 by mazor            ###   ########.fr       */
+/*   Created: 2020/10/26 23:08:42 by mazor             #+#    #+#             */
+/*   Updated: 2020/10/27 19:31:27 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COPY_H
-# define COPY_H
+#ifndef VECTOR_OPERATION
+# define VECTOR_OPERATION
 
 # include "structures.h"
 
-void		copy_cam(t_cam *dest, t_cam *src);
-void		copy_light(t_light *dest, t_light *src);
-void		copy_obj(t_obj *dest, t_obj *src);
-t_vec		new_vec(double x, double y, double z);
-t_color		new_color(int r, int g, int b);
+t_vec		vec_add(t_vec a, t_vec b);
+double		scalar_product(t_vec a, t_vec b);
+t_vec		vector_product(t_vec a, t_vec b);
+t_vec		vec_mult_num(t_vec vector, double scalar);
+t_vec		vec_sub(t_vec a, t_vec b);
 
-# endif
+#endif

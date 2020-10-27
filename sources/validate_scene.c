@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 12:06:23 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/24 01:24:21 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/27 13:23:42 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	validate_resolution(char **elem_info, int line_num, t_scene *scene)
 			print_validation_error(6, line_num, scene);
 		else
 		{
-			scene->mlx.size_x = (int)fmin(width, scene->mlx.screen_x);
-			scene->mlx.size_y = (int)fmin(height, scene->mlx.screen_y);
+			scene->mlx.w = (int)fmin(width, scene->mlx.screen_x);
+			scene->mlx.h = (int)fmin(height, scene->mlx.screen_y);
 			scene->is_resol_set = TRUE;
 		}
 	}
@@ -81,7 +81,8 @@ void	validate_camera(char **elem_info, int line_num, t_scene *scene)
 			print_validation_error(5, line_num, scene);
 		else
 		{
-			camera.fov = ft_atoi(elem_info[3]);
+			camera.fov = (double)ft_atoi(elem_info[3]) * M_PI / 180;
+			camera_rotation(&camera);
 			if (!(new_cam = (t_cam*)malloc(sizeof(t_cam))))
 				print_and_exit_error(14, scene);
 			copy_cam(new_cam, &camera);

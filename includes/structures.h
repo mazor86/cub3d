@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/24 00:34:28 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/27 21:05:01 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ typedef struct		s_cam
 {
 	t_vec			pos;
 	t_vec			norm;
-	int				fov;
+	double			fov;
+	t_vec			rot_fov_x;
+	t_vec			rot_fov_y;
 }					t_cam;
 
 typedef struct		s_color
@@ -57,14 +59,22 @@ typedef struct		s_light
 	t_color			color;
 }					t_light;
 
+typedef struct		s_inter
+{
+	double			t;
+	t_vec			pos;
+	t_vec			norm;
+	t_color			color;
+}					t_inter;
+
 typedef struct		s_mlx
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
 	int				screen_x;
 	int				screen_y;
-	int				size_x;
-	int				size_y;
+	int				w;
+	int				h;
 	char			*title;
 }					t_mlx;
 
@@ -75,18 +85,30 @@ typedef struct		s_obj
 	t_vec			center;
 	t_vec			norm;
 	double			diam;
+	double			r;
 	double			height;
 	t_vec			a;
 	t_vec			b;
 	t_vec			c;
 }					t_obj;
 
+typedef struct		s_img
+{
+	void			*ptr;
+	char			*addr;
+	int				bpp;
+	int				size_line;
+	int				end;
+}					t_img;
+
 typedef struct		s_scene
 {
 	t_mlx			mlx;
 	t_list			*cams;
+	int				num_cams;
 	t_list			*objs;
 	t_list			*lights;
+	t_img			**images;
 	int				line_error;
 	int				scene_error;
 	int				is_resol_set;

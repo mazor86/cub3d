@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/24 13:20:55 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 00:42:02 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@ void	free_scene(t_scene *scene)
 	ft_lstclear(&(scene->objs), free);
 	free(scene);
 	scene = NULL;
+	free_ptr_to_ptr(scene->images);
+	scene->images = NULL;
+	exit(-1);
 }
 
 int		free_ptr_to_ptr(char **ptr_to_ptr)
 {
 	int		i;
 
+	if (!ptr_to_ptr)
+		return (0);
 	i = 0;
 	while (ptr_to_ptr[i])
 	{
@@ -121,7 +126,7 @@ int		is_normal_vector(char *str, t_vec *vector)
 		return (0);
 	if (vector->len < EPSILON)
 		return (0);
-	normalize_vector(vector);
+	get_norm(vector);
 	return (1);
 }
 
@@ -155,3 +160,48 @@ int		count_str_in_array(char **array_of_str)
 	return (i);
 }
 
+void	camera_rotation(t_cam	*camera)
+{
+	double	k;
+	t_vec	random;
+	t_vec	new_x;
+	t_vec	new_y;
+
+	k = tan(camera->fov / 2);
+	if (camera->norm.x != 0 || camera->norm.z != 0)
+		random = new_vec(0, 1, 0);
+	else
+		random = new_vec(1, 0, 0);
+	new_x = vector_product(camera->norm, random);
+	get_norm(&new_x);
+	new_y = vector_product(camera->norm, new_x);
+	get_norm(&new_y);
+	camera->rot_fov_x = vec_mult_num(new_x, k);
+	camera->rot_fov_y = vec_mult_num(new_y, k);
+}
+
+t_color	correct_color(t_vec vec_color)
+{
+	t_color		color;
+
+	color.r = vec_color.x > 255 ? 255 : vec_color.x;
+	color.g = vec_color.y > 255 ? 255 : vec_color.y;
+	color.b = vec_color.z > 255 ? 255 : vec_color.z;
+	color.t = 0;
+	return (color);
+}
+
+t_vec	color_to_vector(t_color color)
+{
+	t_vec	vec_color;
+
+	vec_color.x = (double)color.r;
+	vec_color.y = (double)color.g;
+	vec_color.z = (double)color.b;
+	return (vec_color);
+}
+
+int		color_to_int(t_color color)
+{
+	return (0x00 << 24 | color.r << 16 | color.g << 8 | color.b);
+}

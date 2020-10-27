@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 12:00:37 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/22 16:07:56 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/25 02:40:26 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include "libft.h"
 # include "structures.h"
+# include "utils.h"
 
 # define STD_ERR 2
 # define ERR_1 "Usage: ./miniRT <scene_name> [--save]"

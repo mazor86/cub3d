@@ -59,7 +59,7 @@ void	ft_print_scene(t_scene *scene)//
 	light_ptr = scene->lights ? (t_light *)(scene->lights->content) : NULL;
 	obj_ptr = scene->objs ? (t_obj*)(scene->objs->content) : NULL;
 	printf("SCENE\n\n");
-	printf("Resolution = %d x %d\n\n", scene->mlx.size_x, scene->mlx.size_y);
+	printf("Resolution = %d x %d\n\n", scene->mlx.w, scene->mlx.h);
 	printf("Ambient light:\nintens = %.2f\ncolor: %3d %3d %3d\n\n", scene->amb_intens, scene->amb_color.r, scene->amb_color.g, scene->amb_color.b);
 	while (cam_ptr)
 	{

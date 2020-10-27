@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:47:48 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/24 00:35:33 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/27 21:00:28 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void		copy_cam(t_cam *dest, t_cam *src)
 	dest->pos = src->pos;
 	dest->norm = src->norm;
 	dest->fov = src->fov;
+	dest->rot_fov_x = src->rot_fov_x;
+	dest->rot_fov_y = src->rot_fov_y;
 }
 
 void		copy_light(t_light *dest, t_light *src)
@@ -44,4 +46,26 @@ void		copy_obj(t_obj *dest, t_obj *src)
 		dest->diam = src->diam;
 		dest->height = src->height;
 	}
+	dest->r = dest->diam / 2;
+}
+
+t_vec		new_vec(double x, double y, double z)
+{
+	t_vec	vector;
+
+	vector.x = x;
+	vector.y = y;
+	vector.z = z;
+	return (vector);
+}
+
+t_color		new_color(int r, int g, int b)
+{
+	t_color		new;
+
+	new.t = 0;
+	new.r = r;
+	new.g = g;
+	new.b = b;
+	return (new);
 }
