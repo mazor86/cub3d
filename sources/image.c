@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:54:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 00:49:29 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 15:33:39 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ t_color			get_ray_color(t_vec *ray, t_scene *scene)
 	t_inter	inter;
 
 	inter = closest_inter(ray, scene);
+	if (inter.t < 0)
+		return (new_color(0, 0, 0));
+	
 	color = color_to_vector(inter.color);
 	return (correct_color(color));
 }
@@ -65,7 +68,7 @@ static void		raytracing(t_scene *scene, t_img *img, t_cam *camera)
 			ray[1] = get_ray_dir(x, y, scene, camera);
 			ray[0] = camera->pos;
 			color = get_ray_color(ray, scene);
-			my_mlx_pixel_put(img, x, y, color_to_int(color));
+			my_mlx_pixel_put(img, x,scene->mlx.w - y, color_to_int(color));
 			x++;
 		}
 		y++;
@@ -74,17 +77,20 @@ static void		raytracing(t_scene *scene, t_img *img, t_cam *camera)
 
 static void		render_image(int num, t_scene *scene, t_cam *camera)
 {
+	t_img	*img_ptr;
 	t_img	img;
 	
-	img.ptr = mlx_new_image(scene->mlx.mlx_ptr, scene->mlx.w,\
+	img.img = mlx_new_image(scene->mlx.mlx_ptr, scene->mlx.w,\
 								scene->mlx.h);
-	if (!img.ptr)
+	if (!img.img)
 		free_scene(scene);
-	img.addr = mlx_get_data_addr(img.ptr, &img.bpp, &img.size_line, img.end);
+	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.size_line, &img.end);
 	if (!img.addr)
 		free_scene(scene);
 	raytracing(scene, &img, camera);
-	*((scene->images)[num]) = img;
+	img_ptr = (t_img*)malloc(sizeof(t_img));
+	*img_ptr = img;
+	(scene->images)[num] = img_ptr;
 }
 
 void			create_images(t_scene *scene)

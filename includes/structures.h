@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 21:05:01 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 14:35:59 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 
 # include <stddef.h>
 # include "libft.h"
-# define TRUE 1
-# define FALSE 0
-# define EPSILON 0.000001
-# define SPOT 1
-# define SPHERE 1
-# define PLANE 2
-# define SQUARE 3
-# define CYLINDER 4
-# define TRIANGLE 5
+# define TRUE		1
+# define FALSE		0
+# define EPSILON	0.000001
+# define SPOT		1
+# define SPHERE		1
+# define PLANE		2
+# define SQUARE		3
+# define CYLINDER	4
+# define TRIANGLE	5
+# define LEFT		65361
+# define RIGHT		65363
+# define KEY_S		115
+# define ESC		65307
+
 
 typedef	struct		s_vec
 {
@@ -94,7 +99,7 @@ typedef struct		s_obj
 
 typedef struct		s_img
 {
-	void			*ptr;
+	void			*img;
 	char			*addr;
 	int				bpp;
 	int				size_line;
@@ -115,6 +120,7 @@ typedef struct		s_scene
 	int				is_light_set;
 	double			amb_intens;
 	t_color			amb_color;
+	int				i;
 }					t_scene;
 
 #endif

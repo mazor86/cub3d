@@ -16,7 +16,7 @@ CC				= clang
 
 RM				= rm -rf
 
-FLAGS			= -Wall -Wextra -Werror -O0
+FLAGS			= -Wall -Wextra -O0
 
 INCLUDES		= ./includes/
 

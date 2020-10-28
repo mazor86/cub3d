@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:01:16 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 23:58:25 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 15:16:38 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static t_inter		get_obj_inter(t_vec *ray, t_obj *obj, t_scene *scene)
 {
-	if (obj->type = SPHERE)
+	if (obj->type == SPHERE)
 		return (sphere_inter(ray, *obj, scene));
-	else if (obj->type = PLANE)
+	else if (obj->type == PLANE)
 		return (plane_inter(ray, *obj, scene));
-	else if (obj->type = SQUARE)
+	else if (obj->type == SQUARE)
 		return (square_inter(ray, *obj, scene));
-	else if (obj->type = TRIANGLE)
+	else if (obj->type == TRIANGLE)
 		return (triangle_inter(ray, *obj, scene));
-	else if (obj->type = CYLINDER)
+	else if (obj->type == CYLINDER)
 		return (cylinder_inter(ray, *obj, scene));
 }
 
@@ -34,12 +34,15 @@ t_inter		closest_inter(t_vec *ray, t_scene *scene)
 
 	obj = scene->objs;
 	inter.t = -1;
-	inter.color = new_color(255, 255, 255);
 	while (obj)
 	{
 		tmp = get_obj_inter(ray, (t_obj*)(obj->content), scene);
-		if ((tmp.t >= 0.001 && tmp.t < inter.t) || inter.t != -1)
+		if ((tmp.t >= 0.001 && tmp.t < inter.t) || inter.t == -1)
+		{
+			if (tmp.t == -1)
+				tmp.color = new_color(0, 0, 0);
 			inter = tmp;
+		}
 		obj = obj->next;
 	}
 	return (inter);

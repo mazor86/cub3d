@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 22:51:47 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 12:51:36 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 12:21:11 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ t_vec		get_norm(t_vec *vector)
 		return (*vector);
 	if (vector->len < EPSILON)
 		return (*vector);
-	vec_mult_num(vector, (1 / vector->len));
+	*vector = vec_mult_num(*vector, (1 / vector->len));
 	return (*vector);
 }

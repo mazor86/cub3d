@@ -2,5 +2,6 @@ BEFORE FINISH PROJECT:
 
 -check Norminette
 -check all Makefile and its rules
+-check -Wall -Wextra -Werror in Makefile
 -examine checklist
 -delete unnecessary files
