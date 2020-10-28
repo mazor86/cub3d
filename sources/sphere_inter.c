@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 19:16:05 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 21:05:11 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 16:45:34 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ t_inter		sphere_inter(t_vec *ray, t_obj obj, t_scene *scene)
 	inter.t = discrim;
 	inter.pos = vec_add(ray[0], vec_mult_num(ray[1], discrim));
 	inter.norm = vec_sub(inter.pos, obj.center);
+	get_norm(&inter.norm);
 	return (inter);
 }

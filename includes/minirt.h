@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:20:04 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 00:04:56 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 16:35:59 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 #include "parse.h"
 #include "mlx.h"
 #include "image.h"
+#include "window.h"
 
 #endif

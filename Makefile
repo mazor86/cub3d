@@ -31,6 +31,7 @@ SRC				=	checks.c\
 					get_next_line_utils.c\
 					get_next_line.c\
 					image.c\
+					light.c\
 					math_utils.c\
 					minirt.c\
 					parse.c\

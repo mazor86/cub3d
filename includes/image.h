@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:54:54 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 13:44:59 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 16:08:03 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "utils.h"
 # include "trace_ray.h"
 # include "mlx.h"
+# include "light.h"
 
 void	create_images(t_scene *scene);
 

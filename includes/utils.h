@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:59 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 00:40:07 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 17:17:55 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ double	ft_atof(const char *str);
 int		count_str_in_array(char **array_of_str);
 void	camera_rotation(t_cam *camera);
 t_color	correct_color(t_vec vec_color);
-t_vec	color_to_vector(t_color color);
+t_vec	color_to_vec(t_color color);
 int		color_to_int(t_color color);
 
 

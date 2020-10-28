@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 00:42:02 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 17:10:46 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ t_color	correct_color(t_vec vec_color)
 	return (color);
 }
 
-t_vec	color_to_vector(t_color color)
+t_vec	color_to_vec(t_color color)
 {
 	t_vec	vec_color;
 

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intersection.h                                     :+:      :+:    :+:   */
+/*   light.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 19:16:41 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 16:45:16 by mazor            ###   ########.fr       */
+/*   Created: 2020/10/28 16:05:03 by mazor             #+#    #+#             */
+/*   Updated: 2020/10/28 17:11:09 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERSECTION_H
-# define INTERSECTION_H
+#ifndef LIGHT_H
+# define LIGHT_H
 
 # include "structures.h"
 # include "vector_operation.h"
-# include "math_utils.h"
-# include <math.h>
+# include "copy.h"
+# include "utils.h"
 
-t_inter		sphere_inter(t_vec *ray, t_obj obj, t_scene *scene);
-t_inter		plane_inter(t_vec *ray, t_obj obj, t_scene *scene);
-t_inter		square_inter(t_vec *ray, t_obj obj, t_scene *scene);
-t_inter		triangle_inter(t_vec *ray, t_obj obj, t_scene *scene);
-t_inter		cylinder_inter(t_vec *ray, t_obj obj, t_scene *scene);
+t_vec	diffusion_light(t_inter inter, t_scene *scene);
 
 #endif

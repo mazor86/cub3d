@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:54:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 15:33:39 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/28 21:56:56 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ t_color			get_ray_color(t_vec *ray, t_scene *scene)
 	inter = closest_inter(ray, scene);
 	if (inter.t < 0)
 		return (new_color(0, 0, 0));
-	
-	color = color_to_vector(inter.color);
+	color = diffusion_light(inter, scene);
+	color = vec_add(color, color_to_vec(inter.color));
 	return (correct_color(color));
 }
 
