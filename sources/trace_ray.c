@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:01:16 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 13:49:19 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 18:20:03 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_inter		closest_inter(t_vec *ray, t_scene *scene)
 	while (obj)
 	{
 		tmp = get_obj_inter(ray, (t_obj*)(obj->content), scene);
-		if ((tmp.t >= 0.001 && tmp.t < inter.t) || inter.t == -1)
+		if (tmp.t >= 0.001 && (tmp.t < inter.t || inter.t == -1))
 		{
 			if (tmp.t == -1)
 				tmp.color = new_color(0, 0, 0);
