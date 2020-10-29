@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 19:16:05 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 01:59:54 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 19:36:41 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static double	min_positive(double a, double b)
 		return (fmax(a, b));
 }
 
-t_inter		sphere_inter(t_vec *ray, t_obj obj, t_scene *scene)
+t_inter		sphere_inter(t_vec *ray, t_obj obj)
 {
 	t_inter		inter;
 	t_vec		o_c;

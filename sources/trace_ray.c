@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:01:16 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 18:20:03 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 19:38:05 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 t_inter		get_obj_inter(t_vec *ray, t_obj *obj, t_scene *scene)
 {
 	if (obj->type == SPHERE)
-		return (sphere_inter(ray, *obj, scene));
+		return (sphere_inter(ray, *obj));
 	else if (obj->type == PLANE)
-		return (plane_inter(ray, *obj, scene));
+		return (plane_inter(ray, *obj));
 	else if (obj->type == SQUARE)
 		return (square_inter(ray, *obj, scene));
 	else if (obj->type == TRIANGLE)

@@ -6,13 +6,13 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 23:21:15 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 18:30:06 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 19:36:53 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "intersection.h"
 
-t_inter	plane_inter(t_vec *ray, t_obj obj, t_scene *scene)
+t_inter	plane_inter(t_vec *ray, t_obj obj)
 {
 	t_inter		inter;
 	t_vec		tmp;
