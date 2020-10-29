@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 17:01:29 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/30 02:02:58 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,4 +204,24 @@ t_vec	color_to_vec(t_color color)
 int		color_to_int(t_color color)
 {
 	return (0x00 << 24 | color.r << 16 | color.g << 8 | color.b);
+}
+
+int		is_equal_vec(t_vec a, t_vec b)
+{
+	if (fabs(a.x - b.x) < EPSILON && fabs(a.y - b.y) < EPSILON\
+		&& fabs(a.z - b.z) < EPSILON)
+		return (1);
+	else
+		return (0);
+}
+
+int		is_trianle(t_obj tr)
+{
+	if (is_equal_vec(tr.a, tr.b) || is_equal_vec(tr.a, tr.c)\
+								|| is_equal_vec(tr.b, tr.c))
+	{
+		return (0);
+	}
+	else
+		return (1);
 }

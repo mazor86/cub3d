@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:59 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 17:17:55 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/30 02:00:12 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	camera_rotation(t_cam *camera);
 t_color	correct_color(t_vec vec_color);
 t_vec	color_to_vec(t_color color);
 int		color_to_int(t_color color);
-
+int		is_equal_vec(t_vec a, t_vec b);
+int		is_trianle(t_obj trianle);
 
 /*
 ** t_vec	str_to_vec(char *str);

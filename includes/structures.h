@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 16:42:15 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/30 00:32:11 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ typedef struct		s_obj
 	t_vec			a;
 	t_vec			b;
 	t_vec			c;
+	t_vec			e1;
+	t_vec			e2;
 }					t_obj;
 
 typedef struct		s_img

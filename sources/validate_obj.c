@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 12:13:05 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/24 01:48:18 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/30 01:58:48 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,27 +96,27 @@ void	validate_square(char **elem_info, int line_num, t_scene *scene)
 
 void	validate_triangle(char **elem_info, int line_num, t_scene *scene)
 {
-	t_obj	triangle;
+	t_obj	tr;
 	t_obj	*new_trianle;
 
 	if (count_str_in_array(elem_info) != 5)
 		print_validation_error(4, line_num, scene);
 	if (!scene->line_error)
 	{
-		if (!is_point(elem_info[1], &(triangle.a)))
+		if (!is_point(elem_info[1], &(tr.a)))
 			print_validation_error(5, line_num, scene);
-		else if (!is_point(elem_info[2], &(triangle.b)))
+		else if (!is_point(elem_info[2], &(tr.b)))
 			print_validation_error(5, line_num, scene);
-		else if (!is_point(elem_info[3], &(triangle.c)))
+		else if (!is_point(elem_info[3], &(tr.c)))
 			print_validation_error(5, line_num, scene);
-		else if (!(is_rgb_color(elem_info[4], &(triangle.color))))
+		else if (!(is_rgb_color(elem_info[4], &(tr.color))) && is_trianle(tr))
 			print_validation_error(13, line_num, scene);
 		else
 		{
 			if (!(new_trianle = (t_obj*)malloc(sizeof(t_obj))))
 				print_and_exit_error(14, scene);
-			triangle.type = TRIANGLE;
-			copy_obj(new_trianle, &triangle);
+			tr.type = TRIANGLE;
+			copy_obj(new_trianle, &tr);
 			ft_lstadd_front(&(scene->objs), ft_lstnew(new_trianle));
 		}
 	}
