@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 17:10:46 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 17:01:29 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	free_scene(t_scene *scene)
 	ft_lstclear(&(scene->objs), free);
 	free(scene);
 	scene = NULL;
-	free_ptr_to_ptr(scene->images);
-	scene->images = NULL;
+	// free_ptr_to_ptr(scene->images);
+	// scene->images = NULL;
 	exit(-1);
 }
 

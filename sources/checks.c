@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 19:37:11 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/25 12:58:17 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 17:01:40 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	check_scene(t_scene *scene)
 	if (scene->scene_error)
 	{
 		free_scene(scene);
-		exit(-1);
+		// exit(-1);
 	}
 	scene->num_cams = ft_lstsize(scene->cams);
 }
