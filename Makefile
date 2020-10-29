@@ -18,7 +18,7 @@ RM				= rm -rf
 
 FLAGS			= -Wall -Wextra -O0
 
-INCLUDES		= ./includes/
+INCLUDES		= -I./includes/ -I./libft -I.mlx_linux
 
 SRC_DIR			= ./sources/
 
@@ -66,7 +66,7 @@ $(MLX):
 					@echo "$@ is done!\n"
 
 %.o:		%.c 
-					$(CC) $(FLAGS) -I$(INCLUDES) -c $< -o $@ -g
+					$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@ -g
 					@echo "Compiled $< successfully..."
 
 clean:

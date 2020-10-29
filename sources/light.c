@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:52:32 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 16:42:42 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 20:57:18 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_vec	diffusion_light(t_inter inter, t_scene *scene)
 	t_list	*light_src;
 	t_light	light;
 	t_vec	color[2];
-	t_vec	l_ray[3];
+	t_vec	l_ray[2];
 	double	cosinus;
 
 	color[0] = new_vec(0, 0, 0);

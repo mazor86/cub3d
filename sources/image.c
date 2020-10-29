@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:54:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 01:55:57 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/29 21:00:27 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void		raytracing(t_scene *scene, t_img *img, t_cam *camera)
 			ray[1] = get_ray_dir(x, y, scene, camera);
 			ray[0] = camera->pos;
 			color = get_ray_color(ray, scene);
-			my_mlx_pixel_put(img, x,scene->mlx.w - y, color_to_int(color));
+			my_mlx_pixel_put(img, x, scene->mlx.h - y, color_to_int(color));
 			x++;
 		}
 		y++;
