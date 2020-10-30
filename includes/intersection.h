@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 19:16:41 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 23:09:10 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 00:53:39 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "vector_operation.h"
 # include "math_utils.h"
 # include <math.h>
+# include "copy.h"
 
 t_inter		sphere_inter(t_vec *ray, t_obj obj);
 t_inter		plane_inter(t_vec *ray, t_obj obj);
