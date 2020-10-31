@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:01:58 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 21:01:34 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:00:29 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@
 # include "copy.h"
 
 t_inter		closest_inter(t_vec *ray, t_scene *scene);
+
 #endif

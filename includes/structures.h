@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 13:56:18 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:02:01 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 # define KEY_S		115
 # define ESC		65307
 # define PI			3.141592654
-
 
 typedef	struct		s_vec
 {
@@ -84,21 +83,21 @@ typedef struct		s_mlx
 	char			*title;
 }					t_mlx;
 
-typedef struct	s_cyl_tmp
+typedef struct		s_cyl_tmp
 {
-	double		roots[2];
-	double		a;
-	double		b;
-	double		c;
-	t_vec		tmp_a;
-	t_vec		h;
-	t_vec		n;
-	t_vec		intersect;
-	t_vec		vec_center2inter;
-	double		disc;
-	t_vec		del_p;
-	t_vec		tmp_c;
-}				t_cyl_tmp;
+	double			roots[2];
+	double			a;
+	double			b;
+	double			c;
+	t_vec			tmp_a;
+	t_vec			h;
+	t_vec			n;
+	t_vec			intersect;
+	t_vec			vec_center2inter;
+	double			disc;
+	t_vec			del_p;
+	t_vec			tmp_c;
+}					t_cyl_tmp;
 
 typedef struct		s_obj
 {

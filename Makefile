@@ -41,7 +41,9 @@ SRC				=	checks.c\
 					square_inter.c\
 					trace_ray.c\
 					triangle_inter.c\
-					utils.c\
+					utils1.c\
+					utils2.c\
+					utils3.c\
 					validate_obj.c\
 					validate_scene.c\
 					vector_operation.c\

@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:59 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/30 02:00:12 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 14:59:40 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <math.h>
-# include <stdio.h>//
-# include "temp.h"//
 # include "libft.h"
 # include "structures.h"
 # include "math_utils.h"
@@ -37,9 +35,5 @@ t_vec	color_to_vec(t_color color);
 int		color_to_int(t_color color);
 int		is_equal_vec(t_vec a, t_vec b);
 int		is_trianle(t_obj trianle);
-
-/*
-** t_vec	str_to_vec(char *str);
-*/
 
 #endif

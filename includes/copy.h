@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:48:13 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/30 00:33:54 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:02:33 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ void		copy_obj(t_obj *dest, t_obj *src);
 t_vec		new_vec(double x, double y, double z);
 t_color		new_color(int r, int g, int b);
 
-# endif
+#endif

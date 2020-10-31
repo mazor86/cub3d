@@ -6,12 +6,12 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 23:08:42 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 02:17:53 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:02:24 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VECTOR_OPERATION
-# define VECTOR_OPERATION
+#ifndef VECTOR_OPERATION_H
+# define VECTOR_OPERATION_H
 
 # include "structures.h"
 # include "math_utils.h"
