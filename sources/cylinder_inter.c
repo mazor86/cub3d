@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 23:25:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 03:33:18 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 04:02:49 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_inter	format_inter(double t, t_vec pos, t_vec norm, t_color color)
 	inter.t = t;
 	inter.color = color;
 	inter.pos = pos;
-	inter.norm = vec_num(norm, -1);
+	inter.norm = norm;
 	get_norm(&inter.norm);
 	return (inter);
 }
@@ -71,6 +71,8 @@ t_inter			cylinder_inter(t_vec *ray, t_obj cy)
 	if (t.h.len > cy.height)
 		return (inter);
 	inter = format_inter(t.disc, t.intersect, t.n, cy.color);
+	if (scal_prod(inter.norm, ray[1]) > 0)
+		inter.norm = vec_num(inter.norm, -1);
 	return	(inter);
 }
 

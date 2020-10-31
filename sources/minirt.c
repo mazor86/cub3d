@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 13:19:25 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 00:08:38 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 11:08:37 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int			main(int ar, char **av)
 		print_and_exit_error(7, scene);
 	check_scene(scene);
 	create_images(scene);
-	create_window(scene);
-	return (0); //rm
+	if (ar == 2)
+		create_window(scene);
+	else
+		save_bmp();
 }
