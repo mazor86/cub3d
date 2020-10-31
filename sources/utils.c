@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/30 02:02:58 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 01:55:24 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,12 +172,12 @@ void	camera_rotation(t_cam	*camera)
 		random = new_vec(0, 1, 0);
 	else
 		random = new_vec(1, 0, 0);
-	new_x = vector_product(camera->norm, random);
+	new_x = vec_prod(camera->norm, random);
 	get_norm(&new_x);
-	new_y = vector_product(camera->norm, new_x);
+	new_y = vec_prod(camera->norm, new_x);
 	get_norm(&new_y);
-	camera->rot_fov_x = vec_mult_num(new_x, k);
-	camera->rot_fov_y = vec_mult_num(new_y, k);
+	camera->rot_fov_x = vec_num(new_x, k);
+	camera->rot_fov_y = vec_num(new_y, k);
 }
 
 t_color	correct_color(t_vec vec_color)

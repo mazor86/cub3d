@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:54:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 21:00:27 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 01:52:59 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static t_vec		get_ray_dir(int x, int y, t_scene *scene, t_cam *cam)
 
 	width = (double)scene->mlx.w;
 	height = (double)scene->mlx.h;
-	x_offset = vec_mult_num(cam->rot_fov_x, 1 - 2. * (double)x / width);
-	y_offset = vec_mult_num(cam->rot_fov_y, height / width);
-	y_offset = vec_mult_num(y_offset, 1 - 2 * (double)y / height);
+	x_offset = vec_num(cam->rot_fov_x, 1 - 2. * (double)x / width);
+	y_offset = vec_num(cam->rot_fov_y, height / width);
+	y_offset = vec_num(y_offset, 1 - 2 * (double)y / height);
 	ray = vec_add(x_offset, y_offset);
 	ray = vec_add(ray, cam->norm);
 	get_norm(&ray);

@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 23:09:18 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/29 16:42:31 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 01:55:23 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_vec	vec_sub(t_vec a, t_vec b)
 	return (sub);
 }
 
-double	scalar_product(t_vec a, t_vec b)
+double	scal_prod(t_vec a, t_vec b)
 {
 	double scalar;
 
@@ -42,7 +42,7 @@ double	scalar_product(t_vec a, t_vec b)
 	return (scalar);
 }
 
-t_vec	vector_product(t_vec a, t_vec b)
+t_vec	vec_prod(t_vec a, t_vec b)
 {
 	t_vec vector;
 
@@ -53,7 +53,7 @@ t_vec	vector_product(t_vec a, t_vec b)
 	return (vector);
 }
 
-t_vec		vec_mult_num(t_vec vector, double scalar)
+t_vec		vec_num(t_vec vector, double scalar)
 {
 	vector.x *= scalar;
 	vector.y *= scalar;

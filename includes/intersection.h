@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 19:16:41 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 00:53:39 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 02:17:23 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_inter		plane_inter(t_vec *ray, t_obj obj);
 t_inter		square_inter(t_vec *ray, t_obj obj);
 t_inter		triangle_inter(t_vec *ray, t_obj obj);
 t_inter		cylinder_inter(t_vec *ray, t_obj obj);
+double		min_positive(double a, double b);
 
 #endif

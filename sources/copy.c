@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:47:48 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/30 00:37:05 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 01:55:25 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		copy_obj(t_obj *dest, t_obj *src)
 		dest->c = src->c;
 		dest->e1 = vec_sub(dest->b, dest->a);
 		dest->e2 = vec_sub(dest->c, dest->a);
-		dest->norm = vector_product(dest->e2, dest->e1);
+		dest->norm = vec_prod(dest->e2, dest->e1);
 		get_norm(&(dest->norm));
 	}
 	else
