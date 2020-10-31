@@ -18,7 +18,7 @@ RM				= rm -rf
 
 FLAGS			= -Wall -Wextra -O0
 
-INCLUDES		= -I./includes/ -I./libft -I.mlx_linux
+INCLUDES		= -I./includes/ -I./libft -I./mlx_linux
 
 SRC_DIR			= ./sources/
 
@@ -36,6 +36,7 @@ SRC				=	checks.c\
 					minirt.c\
 					parse.c\
 					plane_inter.c\
+					save.c\
 					sphere_inter.c\
 					square_inter.c\
 					trace_ray.c\

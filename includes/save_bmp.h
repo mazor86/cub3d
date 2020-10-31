@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   save_bmp.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 13:20:04 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 11:39:16 by mazor            ###   ########.fr       */
+/*   Created: 2020/10/31 11:37:17 by mazor             #+#    #+#             */
+/*   Updated: 2020/10/31 12:46:48 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#ifndef SAVE_BMP_H
+# define SAVE_BMP_H
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <stdlib.h>
+# include "structures.h"
 # include "libft.h"
 # include "errors.h"
-# include "checks.h"
-# include "structures.h"
-# include "parse.h"
-# include "mlx.h"
-# include "image.h"
-# include "save_bmp.h"
-# include "window.h"
+# include <fcntl.h>
+# include <unistd.h>
+
+void	save_bmp(t_scene *scene);
 
 #endif

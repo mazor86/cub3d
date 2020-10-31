@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:06:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 11:21:28 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 13:56:18 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define RIGHT		65363
 # define KEY_S		115
 # define ESC		65307
+# define PI			3.141592654
 
 
 typedef	struct		s_vec

@@ -6,13 +6,13 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:01:16 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 03:59:29 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 13:36:51 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"trace_ray.h"
 
-t_inter		get_obj_inter(t_vec *ray, t_obj *obj, t_scene *scene)
+t_inter	get_obj_inter(t_vec *ray, t_obj *obj)
 {
 	if (obj->type == SPHERE)
 		return (sphere_inter(ray, *obj));
@@ -22,7 +22,7 @@ t_inter		get_obj_inter(t_vec *ray, t_obj *obj, t_scene *scene)
 		return (square_inter(ray, *obj));
 	else if (obj->type == TRIANGLE)
 		return (triangle_inter(ray, *obj));
-	else if (obj->type == CYLINDER)
+	else
 		return (cylinder_inter(ray, *obj));
 }
 
@@ -36,7 +36,7 @@ t_inter		closest_inter(t_vec *ray, t_scene *scene)
 	inter.t = -1;
 	while (obj)
 	{
-		tmp = get_obj_inter(ray, (t_obj*)(obj->content), scene);
+		tmp = get_obj_inter(ray, (t_obj*)(obj->content));
 		if (tmp.t >= 0.001 && (tmp.t < inter.t || inter.t == -1))
 		{
 			if (tmp.t == -1)

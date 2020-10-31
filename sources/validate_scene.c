@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 12:06:23 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/27 13:23:42 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 13:56:31 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	validate_resolution(char **elem_info, int line_num, t_scene *scene)
 	{
 		if (!is_all_digit(elem_info[1]) || !is_all_digit(elem_info[2]))
 			print_validation_error(5, line_num, scene);
-		else if ((width = ft_atoi(elem_info[1])) < 200)
+		else if ((width = ft_atoi(elem_info[1])) < 1)
 			print_validation_error(6, line_num, scene);
-		else if ((height = ft_atoi(elem_info[2])) < 200)
+		else if ((height = ft_atoi(elem_info[2])) < 1)
 			print_validation_error(6, line_num, scene);
 		else
 		{
@@ -81,7 +81,7 @@ void	validate_camera(char **elem_info, int line_num, t_scene *scene)
 			print_validation_error(5, line_num, scene);
 		else
 		{
-			camera.fov = (double)ft_atoi(elem_info[3]) * M_PI / 180;
+			camera.fov = (double)ft_atoi(elem_info[3]) * PI / 180;
 			camera_rotation(&camera);
 			if (!(new_cam = (t_cam*)malloc(sizeof(t_cam))))
 				print_and_exit_error(14, scene);
