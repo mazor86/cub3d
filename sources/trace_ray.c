@@ -6,13 +6,13 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:01:16 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 13:36:51 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:07:20 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"trace_ray.h"
+#include "trace_ray.h"
 
-t_inter	get_obj_inter(t_vec *ray, t_obj *obj)
+t_inter		get_obj_inter(t_vec *ray, t_obj *obj)
 {
 	if (obj->type == SPHERE)
 		return (sphere_inter(ray, *obj));

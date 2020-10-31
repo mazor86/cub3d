@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 00:08:46 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/28 14:49:59 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:10:18 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 int		exit_window(t_scene *scene)
 {
 	mlx_destroy_window(scene->mlx.mlx_ptr, scene->mlx.win_ptr);
-	// free_scene(scene);
-	exit(0);
+	free_scene(scene);
 	return (0);
 }
 
 int		key_event(int key, t_scene *scene)
 {
 	if (key == LEFT)
-		scene->i = (scene-> i - 1 < 0) ? scene->i : scene->i - 1;
+		scene->i = (scene->i - 1 < 0) ? scene->i : scene->i - 1;
 	else if (key == RIGHT)
-		scene->i = scene-> i + 1 == scene->num_cams ? scene->i : scene->i + 1;
+		scene->i = scene->i + 1 == scene->num_cams ? scene->i : scene->i + 1;
 	else if (key == ESC)
 		exit_window(scene);
 	mlx_put_image_to_window(scene->mlx.mlx_ptr, scene->mlx.win_ptr,\

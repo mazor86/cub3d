@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:10 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 14:39:03 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:11:13 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int		is_normal_vector(char *str, t_vec *vector)
 	get_norm(vector);
 	return (1);
 }
-
 
 int		is_equal_vec(t_vec a, t_vec b)
 {

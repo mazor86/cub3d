@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:21:59 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 14:59:40 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:28:39 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ t_vec	color_to_vec(t_color color);
 int		color_to_int(t_color color);
 int		is_equal_vec(t_vec a, t_vec b);
 int		is_trianle(t_obj trianle);
+t_vec	get_ray_dir(int x, int y, t_scene *scene, t_cam *cam);
 
 #endif

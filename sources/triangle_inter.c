@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 23:24:37 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 01:55:21 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:07:35 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ t_inter	triangle_inter(t_vec *ray, t_obj obj)
 	inter.pos = vec_add(ray[0], vec_num(ray[1], inter.t));
 	det_u_v[0] = scal_prod(obj.norm, ray[1]);
 	inter.norm = det_u_v[0] < 0 ? obj.norm : vec_num(obj.norm, -1);
-	return	(inter);
+	return (inter);
 }

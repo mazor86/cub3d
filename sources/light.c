@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:52:32 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 01:55:19 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:05:54 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	is_shadowed(t_vec *l_ray, t_scene *scene)
 	return (0);
 }
 
-t_vec	diffusion_light(t_inter inter, t_scene *scene)
+t_vec		diffusion_light(t_inter inter, t_scene *scene)
 {
 	t_list	*light_src;
 	t_light	light;

@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 20:57:33 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/23 23:16:47 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:08:11 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	parse_scene(int fd, t_scene *scene)
 	{
 		if (*line)
 			parse_element(line, line_num, scene);
-	// ft_print_scene(scene);//
 		free(line);
 		line = NULL;
 		line_num++;

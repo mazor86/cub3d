@@ -6,13 +6,13 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 19:16:05 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 02:15:05 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:09:22 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "intersection.h"
 
-double	min_positive(double a, double b)
+double		min_positive(double a, double b)
 {
 	if (a > 0 && b > 0)
 		return (fmin(a, b));
@@ -38,7 +38,7 @@ t_inter		sphere_inter(t_vec *ray, t_obj obj)
 		return (inter);
 	t[0] = (-k[0] - sqrt(discrim)) / 2;
 	t[1] = (-k[0] + sqrt(discrim)) / 2;
-	if ((discrim = min_positive(t[0], t[1])) < 0 )
+	if ((discrim = min_positive(t[0], t[1])) < 0)
 		return (inter);
 	inter.t = discrim;
 	inter.pos = vec_add(ray[0], vec_num(ray[1], discrim));

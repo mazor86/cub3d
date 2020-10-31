@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 23:21:15 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 01:55:22 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:04:56 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ t_inter	plane_inter(t_vec *ray, t_obj obj)
 		return (inter);
 	inter.pos = vec_add(ray[0], vec_num(ray[1], inter.t));
 	inter.norm = scalar < 0 ? obj.norm : vec_num(obj.norm, -1);
-	return	(inter);
+	return (inter);
 }

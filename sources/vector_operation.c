@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 23:09:18 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 01:55:23 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:12:30 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_vec	vec_prod(t_vec a, t_vec b)
 	return (vector);
 }
 
-t_vec		vec_num(t_vec vector, double scalar)
+t_vec	vec_num(t_vec vector, double scalar)
 {
 	vector.x *= scalar;
 	vector.y *= scalar;

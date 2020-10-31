@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 23:23:02 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 01:55:22 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:12:21 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void		calc_vertex_square(t_vec *e, t_obj *obj)
 	c[0] = obj->center;
 	e[0] = vec_add(c[0], vec_num(sq_ord, h));
 	e[0] = vec_add(e[0], vec_num(sq_abs, h));
-	c[1]= vec_add(c[0], vec_num(sq_ord, h));
+	c[1] = vec_add(c[0], vec_num(sq_ord, h));
 	c[1] = vec_add(c[1], vec_num(sq_abs, -h));
 	c[2] = vec_add(c[0], vec_num(sq_ord, -h));
 	c[2] = vec_add(c[2], vec_num(sq_abs, h));
@@ -60,5 +60,5 @@ t_inter			square_inter(t_vec *ray, t_obj obj)
 	if (proj[0] <= obj.height && proj[0] >= 0 && proj[1] <= obj.height\
 							&& proj[1] >= 0)
 		return (inter_pl);
-	return	(inter);
+	return (inter);
 }

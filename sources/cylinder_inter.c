@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 23:25:19 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 04:02:49 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:25:35 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_inter			cylinder_inter(t_vec *ray, t_obj cy)
 	t.tmp_a = vec_sub(ray[1], vec_num(cy.norm, scal_prod(ray[1], cy.norm)));
 	t.del_p = vec_sub(ray[0], cy.center);
 	t.b = 2 * scal_prod(vec_sub(ray[1], vec_num(cy.norm, scal_prod(ray[1],\
-			cy.norm))),vec_sub(t.del_p, vec_num(cy.norm,\
+			cy.norm))), vec_sub(t.del_p, vec_num(cy.norm,\
 			scal_prod(t.del_p, cy.norm))));
 	t.tmp_c = vec_sub(t.del_p, vec_num(cy.norm, scal_prod(t.del_p, cy.norm)));
 	t.c = t.tmp_c.len2 - cy.r * cy.r;
@@ -73,6 +73,5 @@ t_inter			cylinder_inter(t_vec *ray, t_obj cy)
 	inter = format_inter(t.disc, t.intersect, t.n, cy.color);
 	if (scal_prod(inter.norm, ray[1]) > 0)
 		inter.norm = vec_num(inter.norm, -1);
-	return	(inter);
+	return (inter);
 }
-

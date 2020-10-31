@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:25:36 by mazor             #+#    #+#             */
-/*   Updated: 2020/10/31 14:54:13 by mazor            ###   ########.fr       */
+/*   Updated: 2020/10/31 15:11:51 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		count_str_in_array(char **array_of_str)
 	return (i);
 }
 
-void	camera_rotation(t_cam	*camera)
+void	camera_rotation(t_cam *camera)
 {
 	double	k;
 	t_vec	random;
